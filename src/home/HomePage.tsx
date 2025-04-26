@@ -8,7 +8,7 @@ const HomePage = () => {
     return <Navigate to={"/login"} />;
   }
 
-  //return <HomeScreen />;
+  return <HomeScreen />;
 };
 
 export default HomePage;
