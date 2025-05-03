@@ -2,6 +2,8 @@ package com.example.CinemaBackend.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -22,7 +24,7 @@ public class Statistic {
     private Integer totalViews;
 
     @Column(name = "total_revenue", nullable = false, precision = 10, scale = 2)
-    private Double totalRevenue;
+    private BigDecimal totalRevenue;
 
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
@@ -91,14 +93,14 @@ public class Statistic {
     /**
      * @return Double return the totalRevenue
      */
-    public Double getTotalRevenue() {
+    public BigDecimal getTotalRevenue() {
         return totalRevenue;
     }
 
     /**
      * @param totalRevenue the totalRevenue to set
      */
-    public void setTotalRevenue(Double totalRevenue) {
+    public void setTotalRevenue(BigDecimal totalRevenue) {
         this.totalRevenue = totalRevenue;
     }
 

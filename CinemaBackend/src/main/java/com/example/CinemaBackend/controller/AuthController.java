@@ -4,6 +4,7 @@ import com.example.CinemaBackend.dto.LoginRequest;
 import com.example.CinemaBackend.dto.LoginResponse;
 import com.example.CinemaBackend.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.example.CinemaBackend.dto.ChangePasswordRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,16 @@ public class AuthController {
             errorResponse.setToken(null);
             errorResponse.setRole(null);
             return ResponseEntity.badRequest().body(errorResponse);
+        }
+    }
+
+    @PostMapping("/change-password")
+    public ResponseEntity<String> changePassword(@RequestBody ChangePasswordRequest request) {
+        try {
+            authService.changePassword(request);
+            return ResponseEntity.ok("Đổi mật khẩu thành công");
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 }
