@@ -1,5 +1,6 @@
 package com.example.CinemaBackend.config;
 
+import com.example.CinemaBackend.filter.TokenBlacklistFilter;
 import com.example.CinemaBackend.service.TokenBlacklistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
